@@ -5,94 +5,36 @@
 <link rel="shortcut icon" href="HAMZA.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- First Grid: Logo & About -->
-<div class="w3-row">
-  <div class="w3-half w3-blue-grey w3-container w3-center" style="height:700px">
-    <div class="w3-padding-64 w3-center">
-      <h1 style="font-family:'Comic Sans MS'">Hamza Sucks</h1>
-      <img src="HAMZA.jpg" class="w3-spin w3-margin w3-circle" alt="Person" style="width:50%">
-	  <h1 style="font-family:'Comic Sans MS'">Here's Why</h1>
-    </div>
-  </div>
-  <div class="w3-half w3-blue w3-container" style="height:700px">
-    <div class="w3-padding-64 w3-center">
-      <h1 style="font-family:'Comic Sans MS'">Here's where his bitchy-ness excels</h1>
-    </div>
-	    <p style="font-family:'Comic Sans MS'">Electronics</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div style="font-family:'Comic Sans MS'" class="w3-container w3-centre w3-round-xlarge w3-red w3-text-black" style="width:999%">999%</div>
-          </div>
-	    <p style="font-family:'Comic Sans MS'">Python Programming</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div style="font-family:'Comic Sans MS'" class="w3-container w3-centre w3-round-xlarge w3-red w3-text-black" style="width:999%">999%</div>
-          </div>
-	    <p style="font-family:'Comic Sans MS'">Litterally breathing</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div style="font-family:'Comic Sans MS'" class="w3-container w3-centre w3-round-xlarge w3-red w3-text-black" style="width:999%">999%</div>
-          </div>
-	    <p style="font-family:'Comic Sans MS'">Crying about not knowing his dad</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div style="font-family:'Comic Sans MS'" class="w3-container w3-centre w3-round-xlarge w3-red w3-text-black" style="width:999%">999%</div>
-          </div>
-	    <p style="font-family:'Comic Sans MS'">Fighting Freddy</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div style="font-family:'Comic Sans MS'" class="w3-container w3-centre w3-round-xlarge w3-red w3-text-black" style="width:999%">999%</div>
-          </div>
-	    <p style="font-family:'Comic Sans MS'">Photography</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div style="font-family:'Comic Sans MS'" class="w3-container w3-center w3-round-xlarge w3-red w3-text-black" style="width:0%">0%</div>
-          </div>
+<!-- Display the countdown timer in an element -->
+<h1>days since my dad left</h1>
+<h2 id="demo"></h2>
 
-  </div>
-</div>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2003 15:37:25").getTime();
 
-<!-- Second Grid: Work & Resume -->
-<div class="w3-row">
-  <div class="w3-half w3-light-grey w3-center" style="min-height:800px" id="work">
-    <div class="w3-padding-64">
-      <h2 style="font-family:'Comic Sans MS'">His work</h2>
-      <p style="font-family:'Comic Sans MS'">Some of his latest projects.</p>
-    </div>
-    <div class="w3-row">
-      <div class="w3-half">
-        <img src="f.jpg" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="poo.jpg" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-row w3-hide-small">
-      <div class="w3-half">
-        <img src="crying_baby.jpg" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="sad_black_man.jpg" style="width:100%">
-      </div>
-    </div><br>
+// Update the count down every 1 second
+var x = setInterval(function() {
 
-  </div>
-  <div class="w3-half w3-indigo w3-container" style="min-height:800px">
-    <div class="w3-padding-64 w3-padding-large">
-      <h1 style="font-family:'Comic Sans MS'">If hamza is being a bitch, please let me know!</h1>
-      <p style="font-family:'Comic Sans MS'" 	class="w3-opacity">Before he becomes too powerful</p>
-      <form class="w3-container w3-card w3-padding-32 w3-white" action="mailto:cookep330@gmail.com" target="_blank">
-        <div class="w3-section">
-          <label>Name</label>
-          <input class="w3-input" style="width:100%;" type="text" required name="Name">
-        </div>
-        <div class="w3-section">
-          <label>Email</label>
-          <input class="w3-input" style="width:100%;" type="text" required name="Email">
-        </div>
-        <div class="w3-section">
-          <label>Message</label>
-          <input class="w3-input" style="width:100%;" type="text" required name="Message">
-        </div>
-        <button type="submit" class="w3-button w3-teal w3-right">Send</button>
-      </form>
-    </div>
-  </div>
-</div>
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = now - countDownDate;
+
+  // Time calculations for days, hours, minutes and seconds
+  var years = Math.floor(distance/(1000 * 60 * 60 * 24*365))
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = years+ "y "+days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+}, 1000);
+</script>
 <footer>
 <a href="https://electronicssuckshereswhy.tk">
 <button class="w3-button w3-black w3-text-white w3-bar">HOME</button>
